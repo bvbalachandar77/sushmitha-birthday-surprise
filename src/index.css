@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --blush: #FFD6E7;
+    --soft-pink: #FFB6D5;
+    --cream: #FFF8F2;
+    --lavender: #E8DFFF;
+    --deep-rose: #C94F7C;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FFF8F2;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(255, 214, 231, 0.45) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(232, 223, 255, 0.45) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(255, 248, 242, 0.8) 0%, transparent 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+}
+
+/* Safe areas for notched phones (iPhone, modern Android) */
+.safe-top {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+}
+
+/* Custom Paper Texture for Birthday Letter */
+.paper-texture {
+  background-color: #FFFBF7;
+  background-image: radial-gradient(#F0E5D8 0.75px, transparent 0.75px), radial-gradient(#F0E5D8 0.75px, #FFFBF7 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Subtle Shimmer Effect on Special Badges & Buttons */
+.shimmer-badge {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
